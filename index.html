@@ -1,0 +1,48 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"> 
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:600" rel="stylesheet"> 
+		<link rel="stylesheet" type="text/css" href="construct17.css">
+		<script src="jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" language="javascript">
+			var screenshotsLen = 94;
+			var Bool = 0;
+			
+			function MessLoop() {
+				if(Bool == 0) {
+					var random = Math.floor(Math.random() * screenshotsLen);
+					random = 'url(screenshots/' + random + '.jpg)';
+					$('.fundo2').css('background-image', random);
+					$('.fundo2').fadeIn(6000);
+					$('.fundo').fadeOut(6000);
+					Bool = 1;
+				}
+				else {
+					var random = Math.floor(Math.random() * screenshotsLen);
+					random = 'url(screenshots/' + random + '.jpg)';
+					$('.fundo').css('background-image', random);
+					$('.fundo').fadeIn(6000);
+					$('.fundo2').fadeOut(6000);
+					Bool = 0;
+				}
+			}
+			
+			$(document).ready(function() {
+				MessLoop()
+				setInterval(MessLoop, 6000);
+			});
+		</script>
+	</head> 
+
+	<body bgcolor="#FFFFFF">
+		<div class="fundo2"></div>
+		<div class="fundo"></div>
+		<div id="centro">
+			<mark id="construct">Construct</mark><mark id="numero">17</mark>
+			<p id="espaco_frase"/>
+			<!-- <mark id="frase">Minerando Bitcoins..</mark> -->
+		</div>
+		<!-- <div id="cidade"/> -->
+	</body>
+</html> 
